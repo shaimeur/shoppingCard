@@ -3,4 +3,31 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #d3d7d9;
+    text-transform: uppercase;
+}
+section{
+    display: flex;
+    justify-content: space-around;
+}
+.items{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,2fr);
+    grid-template-rows: repeat(2,1fr) ;
+    gap: 30px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    height: 301px;
+    width: 277px;
+}
+.item img{
+    width: 150px;
+    height: 150px;
+    border-radius: 90px;
 }
