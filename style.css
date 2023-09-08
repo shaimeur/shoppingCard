@@ -4,7 +4,6 @@
     box-sizing: border-box;
     background-color: #d3d7d9;
     text-transform:capitalize;
-    font-family: 'Nunito Sans', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
 section{
@@ -14,9 +13,27 @@ section{
     height: 8rem;
 
 }
+span.card{
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+
+}
 .card img{
     height: 2.5rem;
     width: 2.5rem;
+}
+.card::after{
+    content: "0";
+    color: white;
+    border-radius: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: 27px;
+    left: 28px;
+    height: 22px;
+    width: 22px;
+    text-align: center;
 }
 .items{
     display: grid;
@@ -34,6 +51,9 @@ section{
     border: 1px solid black;
     height: 19rem;
     width: 17rem;
+    z-index: 2;
+    box-shadow: 10px 10px 10px 10px rgba(97 98 98 / 0.6);
+    /* background-color: #dce0e2; */
 }
 .item img{
     width: 9rem;
