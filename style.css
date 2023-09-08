@@ -24,7 +24,7 @@ span.card{
     width: 2.5rem;
 }
 .card::after{
-    content: "0";
+    content:attr(data-descr);
     color: white;
     border-radius: 100px;
     background-color: red;
