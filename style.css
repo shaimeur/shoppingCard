@@ -92,10 +92,12 @@ span.card{
 }
 .title-card{
     position: absolute;
-    top: 27px;
+    top: 14px;
     left: 16px;
     background-color: transparent;
     color: #aa8543;
+    font-weight: 300;
+    font-size: xx-large;
 }
 .close{
     background-color: black;
