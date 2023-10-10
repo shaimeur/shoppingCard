@@ -8,11 +8,8 @@ let val = 1 ;
 
 card.addEventListener('click',function() {
     // console.log(event.target)
-    checkout.classList.remove("title-card","close","sum")
-    checkout.classList.toggle("side-nav")
-    // checkout.classList.toggle("title-card")
-    // checkout.classList.toggle("close")
-    // checkout.classList.toggle("sum")
+    // checkout.classList.remove("title-card","close","sum")
+    checkout.classList.toggle("side-nav");
 })
 
 

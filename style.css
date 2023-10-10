@@ -5,7 +5,12 @@
     background-color: #d3d7d9;
     text-transform:capitalize;
     font-family: 'Poppins', sans-serif;
+    /* max-width: 800px; */
+
 }
+/* body{
+    overflow-x: hidden;
+} */
 section{
     display: flex;
     justify-content: space-around;
@@ -17,7 +22,7 @@ span.card{
     height: 3rem;
     width: 3rem;
     position: relative;
-
+    cursor: pointer;
 }
 .card img{
     height: 2.5rem;
@@ -43,6 +48,8 @@ span.card{
     grid-template-rows: repeat(2,19rem);
     column-gap: 1rem;
     row-gap: 1rem;
+    /* max-width: calc(100vw - 400px); */
+
 }
 .item{
     display: flex;
