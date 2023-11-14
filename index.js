@@ -3,14 +3,11 @@ const card = document.querySelector('.card[data-descr]');
 const items = document.querySelector(".items");
 const panier = document.querySelector("#panier")
 const checkout = document.querySelector(".side-nav")
+const sideNave = document.createElement("div")
+
+const closeSideNave = document.querySelector(".close")
+
 let val = 1 ;
-
-
-card.addEventListener('click',function() {
-    // console.log(event.target)
-    // checkout.classList.remove("title-card","close","sum")
-    checkout.classList.toggle("side-nav");
-})
 
 
 for (const button of buttons) {
@@ -22,7 +19,27 @@ for (const button of buttons) {
 }
 
 
+// adding the sideNave when we click on the card icon
 
+card.addEventListener('click',function() {
+     sideNave.innerHTML = `<div class="side-nav">
+                                <h2 class="title-card">Card</h2>
+
+                                <div type="button" class="sum">0.00</div>
+
+                                <div type="button" class="close">close</div>
+                          </div>`;
+        items.insertAdjacentHTML("beforeend",sideNave.innerHTML);
+})
+
+
+// closing the sideNave when clicking on the close button
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('close')) {
+        console.log("Close button clicked");
+        // Add your close sideNave logic here
+    }
+});
 
 
 
