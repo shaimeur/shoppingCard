@@ -22,7 +22,7 @@ for (const button of buttons) {
 // adding the sideNave when we click on the card icon
 
 card.addEventListener('click',function() {
-     sideNave.innerHTML = `<div class="side-nav">
+     sideNave.innerHTML = `<div class="side-nav open">
                                 <h2 class="title-card">Card</h2>
 
                                 <div type="button" class="sum">0.00</div>
@@ -36,7 +36,11 @@ card.addEventListener('click',function() {
 // closing the sideNave when clicking on the close button
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('close')) {
-        console.log("Close button clicked");
+        // console.log("Close button clicked");
+        console.log(event.target.getAttribute("class"))
+
+        event.target.closest('.side-nav').remove();
+
         // Add your close sideNave logic here
     }
 });

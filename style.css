@@ -95,7 +95,8 @@ span.card{
     height: 100%;
     position: absolute;
     top: 5px;
-    right: -140px;
+    /* right: -140px; */
+    transition: right 0.3s ease-in-out;
 }
 .title-card{
     position: absolute;
@@ -106,6 +107,9 @@ span.card{
     font-weight: 300;
     font-size: xx-large;
 }
+.side-nav.open{
+    right: 0;
+}
 .close{
     background-color: black;
     color: white;
@@ -114,6 +118,7 @@ span.card{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .sum{
     background-color: #ac8304;
@@ -123,4 +128,7 @@ span.card{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.cache{
+    display: none;
 }
