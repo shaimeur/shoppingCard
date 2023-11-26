@@ -23,9 +23,10 @@ for (const button of buttons) {
 
 for (let staff of staffs) {
     staff.addEventListener('click', function () {
-        console.log(staff);
+        // console.log("staff==>",staff);
         console.log(staff.childNodes[0].nextSibling);
-        console.log(staff.getAttribute("class['title']"));
+        console.log(staff.childNodes[2].nextSibling.innerText);
+        console.log(staff.childNodes[4].nextSibling.innerText);
     });
 }
 

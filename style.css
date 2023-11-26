@@ -48,7 +48,7 @@ span.card{
     grid-template-rows: repeat(2,19rem);
     column-gap: 1rem;
     row-gap: 1rem;
-    width: calc(120% - 400px);
+    width: calc(110% - 400px);
 
 }
 .item{
