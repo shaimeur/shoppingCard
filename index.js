@@ -24,9 +24,18 @@ for (const button of buttons) {
 for (let staff of staffs) {
     staff.addEventListener('click', function () {
         // console.log("staff==>",staff);
-        console.log(staff.childNodes[0].nextSibling);
-        console.log(staff.childNodes[2].nextSibling.innerText);
-        console.log(staff.childNodes[4].nextSibling.innerText);
+        // console.log(staff.childNodes[1].getAttribute('src'));
+        // console.log(staff.childNodes[2].nextSibling.innerText);
+        // console.log(staff.childNodes[4].nextSibling.innerText);
+
+        let selectedItem = document.createElement("div");
+        selectedItem.innerHTML = `<div class="selectedItem">
+
+                                <img class="selectedImg" src=${staff.childNodes[1].getAttribute('src')} >
+                                <span class="selectedName">${staff.childNodes[2].nextSibling.innerText}</span>
+                                <span class="selectedPrice">${staff.childNodes[4].nextSibling.innerText}</span>
+                                        </div>`
+                sideNavContainer.insertAdjacentElement("afterbegin",selectedItem)
     });
 }
 
