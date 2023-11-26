@@ -95,7 +95,7 @@ span.card{
     height: 100%;
     position: absolute;
     top: 5px;
-    /* right: -140px; */
+    right: 0px;
     transition: right 0.3s ease-in-out;
 }
 .title-card{

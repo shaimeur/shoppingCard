@@ -2,80 +2,42 @@ const buttons = document.querySelectorAll('.btn');
 const card = document.querySelector('.card[data-descr]');
 const items = document.querySelector(".items");
 const panier = document.querySelector("#panier")
-const checkout = document.querySelector(".side-nav")
-const sideNave = document.createElement("div")
+const staffs = document.querySelectorAll(".item")
+let val = 1;
 
-const closeSideNave = document.querySelector(".close")
-
-let val = 1 ;
-
+// Create the sideNave element and append it to the items container
+const sideNave = document.createElement("div");
+sideNave.innerHTML = `<div class="side-nav cache">
+                        <h2 class="title-card">Card</h2>
+                        <div type="button" class="sum">0.00</div>
+                        <div type="button" class="close">close</div>
+                      </div>`;
+items.insertAdjacentElement("beforeend", sideNave);
+const sideNavContainer = items.querySelector('.side-nav');
 
 for (const button of buttons) {
-    button.addEventListener('click',function(){
-        // console.dir(card.getAttribute('data-descr'))
-        card.setAttribute('data-descr',val++)
+    button.addEventListener('click', function () {
+        card.setAttribute('data-descr', val++);
+    });
+}
 
-    })
+for (let staff of staffs) {
+    staff.addEventListener('click', function () {
+        console.log(staff);
+        console.log(staff.childNodes[0].nextSibling);
+        console.log(staff.getAttribute("class['title']"));
+    });
 }
 
 
-// adding the sideNave when we click on the card icon
-
-card.addEventListener('click',function() {
-     sideNave.innerHTML = `<div class="side-nav open">
-                                <h2 class="title-card">Card</h2>
-
-                                <div type="button" class="sum">0.00</div>
-
-                                <div type="button" class="close">close</div>
-                          </div>`;
-        items.insertAdjacentHTML("beforeend",sideNave.innerHTML);
-})
-
-
-// closing the sideNave when clicking on the close button
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('close')) {
-        // console.log("Close button clicked");
-        console.log(event.target.getAttribute("class"))
-
-        event.target.closest('.side-nav').remove();
-
-        // Add your close sideNave logic here
-    }
+// Toggle the sideNave visibility when clicking on the card icon
+card.addEventListener('click', function () {
+    sideNavContainer.classList.toggle('cache');
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// SIDE NAV BAR CODE IN JS
-
-// const sidNav = document.createElement('div')
-// const markup  =
-//  `<div class="side-nav">
-//         <div class="exits">
-//             <div type="button" class="sum"></div>
-//             <div type="button" class="close">close</div>
-//         </div>
-//  </div>`;
-// sidNav.innerHTML = markup
-
-
-// items.insertAdjacentHTML('beforeend',markup)
+// Closing the sideNave when clicking on the close button
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('close')) {
+        sideNavContainer.classList.add('cache');
+    }
+});
