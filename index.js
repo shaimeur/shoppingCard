@@ -7,11 +7,12 @@ let val = 1;
 
 // Create the sideNave element and append it to the items container
 const sideNave = document.createElement("div");
-sideNave.innerHTML = `<div class="side-nav cache">
+sideNave.setAttribute("class", "side-nav cache");
+sideNave.innerHTML = `
                         <h2 class="title-card">Card</h2>
                         <div type="button" class="sum">0.00</div>
                         <div type="button" class="close">close</div>
-                      </div>`;
+                    `;
 items.insertAdjacentElement("beforeend", sideNave);
 const sideNavContainer = items.querySelector('.side-nav');
 
@@ -29,12 +30,12 @@ for (let staff of staffs) {
         // console.log(staff.childNodes[4].nextSibling.innerText);
 
         let selectedItem = document.createElement("div");
-        selectedItem.innerHTML = `<div class="selectedItem">
-
-                                <img class="selectedImg" src=${staff.childNodes[1].getAttribute('src')} >
-                                <span class="selectedName">${staff.childNodes[2].nextSibling.innerText}</span>
-                                <span class="selectedPrice">${staff.childNodes[4].nextSibling.innerText}</span>
-                                        </div>`
+        selectedItem.setAttribute("class","selectedItem")
+        selectedItem.innerHTML = `
+                                         <img class="selectedImg" src=${staff.childNodes[1].getAttribute('src')} >
+                                         <span class="selectedName">${staff.childNodes[2].nextSibling.innerText}</span>
+                                         <span class="selectedPrice">${staff.childNodes[4].nextSibling.innerText}</span>
+                                 `
                 sideNavContainer.insertAdjacentElement("afterbegin",selectedItem)
     });
 }
